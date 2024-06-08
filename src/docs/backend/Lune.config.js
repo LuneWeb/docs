@@ -3,15 +3,7 @@ import { luau } from "$lib/luau";
 import { rust } from "svelte-highlight/languages";
 
 export default [
-    h("LuneWeb"),
-    p("Similar to Tauri, we manage our application with Rust and Cargo, this allows you (the developer) to have as much control as you need over how the application is built"),
-    p("<br>for example: the application in our template repo, bundles scripts and assets using the include_dir! macro"),
-    p("and then provides the Lua instance with an API for using them"),
-    code(luau, [
-        'local assets = require("@local/assets")',
-        'local image = assets.readFile("astolfo.png")'
-    ]),
-    h("LuneWeb/Lune"),
+    h("Lune"),
     p("We've forked Lune and added an struct with the name of GlobalsContext to it"),
     p("this struct allows us to add custom libraries, and add modules without having to add them to the filesystem"),
     p("<hr \\>"),

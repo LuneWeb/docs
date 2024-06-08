@@ -2,14 +2,12 @@
 	import type { Element } from '$lib';
 	import theme from 'svelte-highlight/styles/panda-syntax-light';
 	import Highlight from 'svelte-highlight';
-	import document from '../../docs/Intro.confing';
+	export let document: Element[];
 </script>
 
 <svelte:head>
 	{@html theme}
 </svelte:head>
-
-<h1>Intro</h1>
 
 <main>
 	{#each document as element}
@@ -25,6 +23,7 @@
 				pre {
 					width: 100%;
 					margin-bottom: 3rem;
+					animation: popup 600ms ease-out;
 				}
 
 				.hljs {
@@ -44,12 +43,14 @@
 
 <style>
 	main {
+		font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 		display: flex;
+		border-top-right-radius: 0.5rem;
 		flex-direction: column;
 		align-items: center;
-		width: 80%;
 		margin-left: auto;
 		margin-right: auto;
+		width: calc(100% - 10rem);
 		padding: 2rem;
 		box-sizing: border-box;
 		background-color: rgba(0, 0, 0, 0.1);
@@ -59,9 +60,9 @@
 		font-size: 3rem;
 		font-weight: bold;
 		margin: 1rem;
-		margin-top: 3rem;
+		margin-top: 1.5rem;
 		width: 100%;
-		background-color: rgba(0, 0, 0, 0.05);
+		animation: popup 500ms ease-out;
 	}
 
 	h3 {
@@ -70,6 +71,7 @@
 		margin: 1rem;
 		margin-top: 0;
 		width: 100%;
+		animation: popup 700ms ease-out;
 	}
 
 	p {
@@ -77,11 +79,13 @@
 		width: 100%;
 		margin-top: 0;
 		margin-bottom: 0;
+		animation: popup 300ms ease-out;
 	}
 
 	@media (max-width: 600px) {
 		main {
 			padding: 1rem;
+			width: 100%;
 		}
 
 		h2 {
