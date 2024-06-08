@@ -4,8 +4,8 @@
 </script>
 
 <Navbar>
-	<a href="{base}/">Backend</a>
-	<a href="{base}/frontend">Frontend</a>
+	<a href="{base}/">Rust API</a>
+	<a href="{base}/frontend">Template</a>
 
 	<style>
 		nav a {
