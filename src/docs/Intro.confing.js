@@ -13,7 +13,7 @@ export default [
     ]),
     h("LuneWeb/Lune"),
     p("We've forked Lune and added an struct with the name of GlobalsContext to it"),
-    p("this struct allows us to add custom libraries, and add modules that don't have to exist on the filesystem to the require function"),
+    p("this struct allows us to add custom libraries, and add modules without having to add them to the filesystem"),
     p("<hr \\>"),
     th("Making libraries:"),
     code(rust, [

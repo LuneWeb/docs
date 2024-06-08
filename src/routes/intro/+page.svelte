@@ -57,7 +57,7 @@
 
 	h2 {
 		font-size: 3rem;
-		font-weight: lighter;
+		font-weight: bold;
 		margin: 1rem;
 		margin-top: 3rem;
 		width: 100%;
@@ -66,12 +66,10 @@
 
 	h3 {
 		font-size: 1.5rem;
-		text-decoration: underline;
-		font-weight: lighter;
+		font-weight: bold;
 		margin: 1rem;
 		margin-top: 0;
 		width: 100%;
-		background-color: rgba(0, 0, 0, 0.05);
 	}
 
 	p {
