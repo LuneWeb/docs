@@ -2,6 +2,7 @@ import type { RouteParams } from './$types';
 
 export function load({ params }: { params: RouteParams }) {
 	return {
-		doc: params.doc
+		doc: params.doc,
+		page: params.page
 	};
 }

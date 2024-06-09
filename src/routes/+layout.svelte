@@ -3,8 +3,8 @@
 </script>
 
 <Navbar>
-	<a href="/docs/backend">Backend</a>
-	<a href="/docs/frontend">Frontend</a>
+	<a href="/docs/backend/info">Backend</a>
+	<a href="/docs/frontend/info">Frontend</a>
 
 	<style>
 		nav a {
@@ -26,3 +26,12 @@
 </Navbar>
 
 <slot></slot>
+
+<style>
+	:global(body) {
+		background-color: white;
+		width: 80%;
+		margin-left: auto;
+		margin-right: auto;
+	}
+</style>

@@ -1,29 +1,18 @@
-import { base } from '$app/paths';
-import type { DocumentPage } from '$lib/types';
+import type { Element } from '$lib';
+import frontendInfo from './frontend/Info';
 import lune from './backend/Lune';
-import luneweb from './backend/LuneWeb';
-import info from './frontend/Info';
+import backendInfo from './backend/Info';
 
 export const documents: {
-	[document: string]: DocumentPage[];
+	[document: string]: {
+		[page: string]: Element[];
+	};
 } = {
-	backend: [
-		{
-			name: 'luneweb',
-			elements: luneweb,
-			href: `${base}/docs/backend`
-		},
-		{
-			name: 'lune',
-			elements: lune,
-			href: `${base}/docs/backend`
-		}
-	],
-	frontend: [
-		{
-			name: 'info',
-			elements: info,
-			href: `${base}/docs/frontend`
-		}
-	]
+	backend: {
+		info: backendInfo,
+		lune: lune
+	},
+	frontend: {
+		info: frontendInfo
+	}
 };
