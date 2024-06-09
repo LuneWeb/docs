@@ -4,6 +4,7 @@
 
 <Navbar>
 	<a href="/docs/Rust/Info">Rust API</a>
+	<a href="/docs/Luau/Types">Luau</a>
 
 	<style>
 		nav a {
