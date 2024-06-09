@@ -1,11 +1,10 @@
 <script>
-	import { base } from '$app/paths';
 	import Navbar from '$lib/components/navbar.svelte';
 </script>
 
 <Navbar>
-	<a href="/backend/0">Rust API</a>
-	<a href="/frontend/0">Template</a>
+	<a href="/docs/backend">Backend</a>
+	<a href="/docs/frontend">Frontend</a>
 
 	<style>
 		nav a {

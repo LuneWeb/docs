@@ -1,32 +1,27 @@
 <script lang="ts">
 	import Document from './document.svelte';
 	import VerticalNavbar from './vertical_navbar.svelte';
-	import type { Element } from '$lib';
+	import type { DocumentPage } from '$lib/types';
 
-	interface DocumentPage {
-		name: string;
-		elements: Element[];
-		href: string;
-	}
+	let { docs }: { docs: DocumentPage[] } = $props();
 
-	let { docs, currentPage }: { docs: DocumentPage[]; currentPage: DocumentPage } = $props();
-
-	let document = $derived(currentPage.elements);
+	let pageIndex = $state(0);
+	let document = $derived(docs[pageIndex].elements);
 </script>
 
 <main>
 	<VerticalNavbar>
-		{#each docs as page, pageIndex}
-			<a class="section" href="{page.href}/{pageIndex}">{page.name}</a>
-			<!-- <button
+		{#each docs as page, index}
+			<!-- <a class="section" href="{page.href}/{pageIndex}">{page.name}</a> -->
+			<button
 				onclick={() => {
-					currentPage = page;
+					pageIndex = index;
 				}}>{page.name}</button
-			> -->
+			>
 		{/each}
 
 		<style>
-			.section {
+			button {
 				text-align: start;
 				font-weight: bolder;
 				padding: 0.1rem;
@@ -39,7 +34,7 @@
 				cursor: pointer;
 			}
 
-			.section:hover {
+			button:hover {
 				background-color: rgba(0, 0, 255, 0.2);
 				transform: translateX(-1.5px);
 			}
