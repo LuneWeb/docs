@@ -1,5 +1,7 @@
+import { documents } from '$lib/docs';
+
 export function load() {
 	return {
-		documents: ['backend', 'frontend']
+		documents: Object.keys(documents)
 	};
 }

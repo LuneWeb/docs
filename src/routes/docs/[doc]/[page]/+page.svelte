@@ -25,6 +25,7 @@
 			.section {
 				text-align: start;
 				font-weight: bolder;
+				font-size: 1.2rem;
 				padding: 0.1rem;
 				transition: 200ms;
 				width: 100%;

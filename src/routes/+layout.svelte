@@ -1,27 +1,32 @@
 <script>
 	import { base } from '$app/paths';
 	import Navbar from '$lib/components/navbar.svelte';
+	import { documents } from '$lib/docs';
+
+	let documentsEntires = Object.entries(documents);
 </script>
 
 <Navbar>
-	<a href="{base}/docs/Rust/Info">Rust API</a>
-	<a href="{base}/docs/Luau/Types">Luau</a>
+	{#each documentsEntires as [name, document]}
+		<a href="{base}/docs/{name}/{Object.keys(document)[0]}">{name}</a>
+	{/each}
 
 	<style>
 		nav a {
+			color: blue;
 			background-color: transparent;
 			border-radius: 0rem;
 			transition: 250ms;
 			font-size: 2rem;
 			margin: 0.15rem;
+			margin-right: 2rem;
 		}
 
 		nav a:hover {
 			transform: rotate(-2.5deg);
-			background-color: rgba(0, 0, 0, 0.1);
+			background-color: rgba(0, 0, 255, 0.2);
 			border-radius: 0.15rem;
 			font-size: 2rem;
-			margin: 0.15rem;
 		}
 	</style>
 </Navbar>
