@@ -6,28 +6,30 @@
 	interface DocumentPage {
 		name: string;
 		elements: Element[];
+		href: string;
 	}
 
-	let { docs }: { docs: DocumentPage[] } = $props();
+	let { docs, currentPage }: { docs: DocumentPage[]; currentPage: DocumentPage } = $props();
 
-	let documentPage = $state(docs[0]);
-	let document = $derived(documentPage.elements);
+	let document = $derived(currentPage.elements);
 </script>
 
 <main>
 	<VerticalNavbar>
-		{#each docs as page}
-			<button
+		{#each docs as page, pageIndex}
+			<a class="section" href="{page.href}/{pageIndex}">{page.name}</a>
+			<!-- <button
 				onclick={() => {
-					documentPage = page;
+					currentPage = page;
 				}}>{page.name}</button
-			>
+			> -->
 		{/each}
 
 		<style>
-			button {
+			.section {
 				text-align: start;
 				font-weight: bolder;
+				padding: 0.1rem;
 				transition: 200ms;
 				width: 100%;
 				color: blue;
@@ -37,7 +39,7 @@
 				cursor: pointer;
 			}
 
-			button:hover {
+			.section:hover {
 				background-color: rgba(0, 0, 255, 0.2);
 				transform: translateX(-1.5px);
 			}
