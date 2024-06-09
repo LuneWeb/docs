@@ -13,8 +13,12 @@
 
 <main>
 	<VerticalNavbar>
-		{#each pages as [pageName, page]}
-			<a class="section" href="{base}/docs/{data.doc}/{pageName}">{pageName}</a>
+		{#each pages as [pageName, currentPage]}
+			{#if currentPage === page}
+				<a class="section current" href="{base}/docs/{data.doc}/{pageName}">>{pageName}</a>
+			{:else}
+				<a class="section" href="{base}/docs/{data.doc}/{pageName}">{pageName}</a>
+			{/if}
 		{/each}
 
 		<style>
@@ -29,6 +33,11 @@
 				text-decoration: underline;
 				border-color: transparent;
 				cursor: pointer;
+			}
+
+			.section.current {
+				background-color: rgba(0, 0, 0, 0.2);
+				cursor: default;
 			}
 
 			.section:hover {
