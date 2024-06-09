@@ -3,8 +3,8 @@
 </script>
 
 <Navbar>
-	<a href="/docs/backend/info">Backend</a>
-	<a href="/docs/frontend/info">Frontend</a>
+	<a href="/docs/backend/Info">Backend</a>
+	<a href="/docs/frontend/Info">Frontend</a>
 
 	<style>
 		nav a {
