@@ -3,8 +3,7 @@
 </script>
 
 <Navbar>
-	<a href="/docs/backend/Info">Backend</a>
-	<a href="/docs/frontend/Info">Frontend</a>
+	<a href="/docs/Rust/Info">Rust API</a>
 
 	<style>
 		nav a {
