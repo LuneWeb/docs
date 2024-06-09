@@ -1,6 +1,6 @@
 <script lang="ts">
 	import type { Element } from '$lib';
-	import theme from 'svelte-highlight/styles/panda-syntax-light';
+	import theme from 'svelte-highlight/styles/solarized-light';
 	import Highlight from 'svelte-highlight';
 	export let document: Element[];
 </script>
@@ -27,7 +27,7 @@
 				}
 
 				.hljs {
-					background-color: rgb(200, 200, 200);
+					background-color: rgb(210, 210, 210);
 					font-size: 1.5rem;
 				}
 
@@ -78,8 +78,9 @@
 		font-size: 1.5rem;
 		width: 100%;
 		margin-top: 0;
-		margin-bottom: 0;
+		margin-bottom: 1.5rem;
 		animation: popup 300ms ease-out;
+		text-wrap: balance;
 	}
 
 	@media (max-width: 600px) {

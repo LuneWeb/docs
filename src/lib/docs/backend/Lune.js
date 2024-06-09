@@ -1,6 +1,5 @@
 import { createHeader as h, createTinyHeader as th, createParagraph as p, createCode as code } from "$lib";
-import { luau } from "$lib/luau";
-import { rust } from "svelte-highlight/languages";
+import { lua, rust } from "svelte-highlight/languages";
 
 export default [
     h("Lune"),
@@ -18,7 +17,7 @@ export default [
     Ok(())
 })?;`,
     ]),
-    code(luau, [
+    code(lua, [
         'local funnyNumber = require("@luneweb/funny_number")',
         'print(funnyNumber) -- prints 1000'
     ]),
@@ -30,7 +29,7 @@ export default [
         'let absolute_path = current_dir()?.join("unfunny_number");\n',
         'builder.with_script(absolute_path, Cow::from(script.as_bytes()));'
     ]),
-    code(luau, [
+    code(lua, [
         'local unfunnyNumber = require("unfunny_number")',
         'print(unfunnyNumber) -- prints 6009'
     ])

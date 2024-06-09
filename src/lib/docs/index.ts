@@ -1,7 +1,8 @@
 import type { Element } from '$lib';
 import frontendInfo from './frontend/Info';
-import lune from './backend/Lune';
 import backendInfo from './backend/Info';
+import lune from './backend/Lune';
+import setup from './backend/Setup';
 
 export const documents: {
 	[document: string]: {
@@ -9,10 +10,11 @@ export const documents: {
 	};
 } = {
 	backend: {
-		info: backendInfo,
-		lune: lune
+		Info: backendInfo,
+		['Our Lune fork']: lune,
+		['Basic Setup']: setup
 	},
 	frontend: {
-		info: frontendInfo
+		Info: frontendInfo
 	}
 };
