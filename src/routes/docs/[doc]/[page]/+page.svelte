@@ -1,23 +1,21 @@
 <script lang="ts">
 	import { base } from '$app/paths';
-	import Document from '$lib/components/document.svelte';
+	import Document from '$lib/components/doc_page.svelte';
 	import VerticalNavbar from '$lib/components/vertical_navbar.svelte';
 
 	let { data } = $props();
 
-	import { documents } from '$lib/docs';
-	let document = $derived(documents[data.doc]);
-	let page = $derived(document[data.page]);
-	let pages = $derived(Object.entries(document));
+	let pages = $derived(Object.keys(data.document.Pages));
+	let elementsPromise = $derived(data.page.json());
 </script>
 
 <main>
 	<VerticalNavbar>
-		{#each pages as [pageName, currentPage]}
-			{#if currentPage === page}
-				<a class="section current" href="{base}/docs/{data.doc}/{pageName}">>{pageName}</a>
+		{#each pages as pageName}
+			{#if pageName === data.pageName}
+				<a class="section current" href="{base}/{data.document.Path}/{pageName}">>{pageName}</a>
 			{:else}
-				<a class="section" href="{base}/docs/{data.doc}/{pageName}">{pageName}</a>
+				<a class="section" href="{base}/{data.document.Path}/{pageName}">{pageName}</a>
 			{/if}
 		{/each}
 
@@ -48,7 +46,11 @@
 		</style>
 	</VerticalNavbar>
 
-	<Document document={page}></Document>
+	{#await elementsPromise then elements}
+		<Document {elements}></Document>
+	{:catch err}
+		<h1>{err}</h1>
+	{/await}
 </main>
 
 <style>

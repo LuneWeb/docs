@@ -2,13 +2,11 @@
 	import { base } from '$app/paths';
 	import Navbar from '$lib/components/navbar.svelte';
 	import { documents } from '$lib/docs';
-
-	let documentsEntires = Object.entries(documents);
 </script>
 
 <Navbar>
-	{#each documentsEntires as [name, document]}
-		<a href="{base}/docs/{name}/{Object.keys(document)[0]}">{name}</a>
+	{#each Object.entries(documents) as [docName, doc]}
+		<a href="{base}/docs/{docName}/{Object.keys(doc.Pages)[0]}">{docName}</a>
 	{/each}
 
 	<style>
