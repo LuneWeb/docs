@@ -4,7 +4,9 @@ import { base } from '$app/paths';
 
 export const load: PageLoad = async ({ params, fetch }) => {
 	const document = documents[params.doc];
-	const page = await fetch(`${base}/${document.Path}/${document.Pages[params.page]}`);
+	const url = `${base}/${document.Path}/${document.Pages[params.page]}`;
+	console.log(url);
+	const page = await fetch(url);
 
 	return {
 		docName: params.doc,

@@ -6,7 +6,7 @@
 
 <Navbar>
 	{#each Object.entries(documents) as [docName, doc]}
-		<a href="{base}/docs/{docName}/{Object.keys(doc.Pages)[0]}">{docName}</a>
+		<a href="{base}/{doc.Path}/{Object.keys(doc.Pages)[0]}">{docName}</a>
 	{/each}
 
 	<style>

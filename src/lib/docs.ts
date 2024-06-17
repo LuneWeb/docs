@@ -1,10 +1,11 @@
-import { lua, rust, type LanguageType } from 'svelte-highlight/languages';
+import { json, lua, rust, type LanguageType } from 'svelte-highlight/languages';
 
 export const langs: {
 	[key: string]: LanguageType<string>;
 } = {
 	rust: rust,
-	lua: lua
+	lua: lua,
+	json: json
 };
 
 export type Element =
@@ -26,11 +27,17 @@ export type Document = {
 export const documents: {
 	[name: string]: Document;
 } = {
-	Testing: {
-		Path: 'docs/Testing',
+	rust: {
+		Path: 'docs/rust',
 		Pages: {
-			Intro: 'Intro.json',
-			Decription: 'Desc.json'
+			Info: 'info.json',
+			Lune: 'lune.json'
+		}
+	},
+	luau: {
+		Path: 'docs/luau',
+		Pages: {
+			Types: 'types.json'
 		}
 	}
 };

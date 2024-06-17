@@ -1,0 +1,42 @@
+[
+  {
+    "innerHTML": "\"Lune\"",
+    "tag": "h2"
+  },
+  {
+    "innerHTML": "We've forked Lune and added an struct with the name of GlobalsContext to it\n",
+    "tag": "p"
+  },
+  {
+    "innerHTML": "this struct allows us to add custom libraries, and add modules without having to add them to the filesystem\n<hr/>\n",
+    "tag": "p"
+  },
+  {
+    "innerHTML": "\"Making libraries\"",
+    "tag": "h3"
+  },
+  {
+    "code": "let builder = GlobalsContextBuilder::new();\n\nbuilder.with_alias(\"luneweb\", |modules| {\n    modules.insert(\"funny_number\", LuneModuleCreator::LuaValue(|lua| {\n        Ok(1000)\n    }))\n    \n    Ok(())\n})?;",
+    "lang": "rust",
+    "tag": "codeblock"
+  },
+  {
+    "code": "local funnyNumber = require(\"@luneweb/funny_number\")\nprint(funnyNumber) -- prints 1000",
+    "lang": "lua",
+    "tag": "codeblock"
+  },
+  {
+    "innerHTML": "\"Adding modules\"",
+    "tag": "h3"
+  },
+  {
+    "code": "let builder = GlobalsContextBuilder::new();\nlet script = \"return 6009\";\nlet absolute_path = current_dir()?.join(\"unfunny_number\");\n\nbuilder.with_script(absolute_path, Cow::from(script.as_bytes()));",
+    "lang": "rust",
+    "tag": "codeblock"
+  },
+  {
+    "code": "local unfunnyNumber = require(\"unfunny_number\")\nprint(unfunnyNumber) -- prints 6009",
+    "lang": "lua",
+    "tag": "codeblock"
+  }
+]

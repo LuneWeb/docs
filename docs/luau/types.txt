@@ -1,0 +1,19 @@
+<h2 "Luau Types">
+
+-p {
+This <a href="https://github.com/LuneWeb/LuneWeb-types">repo</a> provides types for all the luneweb libraries, all you have to do is to either clone it or add it to your repo as a submodule
+}
+
+-p {
+To get autocomplete, the Luau Language Server extension on VSCode is recommended, after installing the extension, go to `.vscode/settings.json` in your project directory and change it to this:
+}
+
+```json
+{
+  "luau-lsp.require.mode": "relativeToFile",
+  "luau-lsp.types.roblox": false,
+  "luau-lsp.require.directoryAliases": {
+    "@luneweb/": "path/to/LuneWeb-types",
+  }
+}
+```
