@@ -16,7 +16,6 @@ export default defineConfig({
         items: [
           {
             text: "Libraries",
-            link: "src/luau",
             items: [{ text: "Message API", link: "src/luau/message" }],
           },
           { text: "Configuration", link: "src/luau/config" },
@@ -25,7 +24,12 @@ export default defineConfig({
       {
         text: "Typescript",
         link: "src/typescript",
-        items: [{ text: "Message API", link: "src/typescript/message" }],
+        items: [
+          {
+            text: "Libraries",
+            items: [{ text: "Message API", link: "src/typescript/message" }],
+          },
+        ],
       },
     ],
 
