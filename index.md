@@ -8,10 +8,13 @@ hero:
   tagline: "also known as lune + tauri"
   actions:
     - theme: brand
-      text: Markdown Examples
-      link: /markdown-examples
+      text: Typescript API
+      link: src/typescript
+    - theme: brand
+      text: Luau API
+      link: src/luau
     - theme: alt
-      text: API Examples
-      link: /api-examples
+      text: Github
+      link: https://github.com/luneweb
 ---
 

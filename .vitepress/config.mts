@@ -6,18 +6,26 @@ export default defineConfig({
   description: "create applications with lune and tauri",
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
-    nav: [
-      { text: "Home", link: "/" },
-      { text: "Examples", link: "/markdown-examples" },
-    ],
+    nav: [{ text: "Home", link: "/" }],
 
     sidebar: [
+      { text: "Install", link: "src" },
       {
-        text: "Examples",
+        text: "Luau",
+        link: "src/luau",
         items: [
-          { text: "Markdown Examples", link: "/markdown-examples" },
-          { text: "Runtime API Examples", link: "/api-examples" },
+          {
+            text: "Libraries",
+            link: "src/luau",
+            items: [{ text: "Message API", link: "src/luau/message" }],
+          },
+          { text: "Configuration", link: "src/luau/config" },
         ],
+      },
+      {
+        text: "Typescript",
+        link: "src/typescript",
+        items: [{ text: "Message API", link: "src/typescript/message" }],
       },
     ],
 
