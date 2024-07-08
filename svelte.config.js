@@ -12,7 +12,7 @@ const config = {
 			fallback: "404.html"
 		}),
 		paths: {
-			base: process.env.NODE_ENV === 'production' ? '/LuneWeb-docs' : '',
+			base: process.env.NODE_ENV === 'production' ? '/docs' : '',
 		}
 	}
 };
