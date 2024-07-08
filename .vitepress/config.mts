@@ -10,6 +10,7 @@ export default defineConfig({
 
     sidebar: [
       { text: "Install", link: "src" },
+      { text: "Configuration", link: "src/luau/config" },
       {
         text: "Luau",
         link: "src/luau",
@@ -18,7 +19,6 @@ export default defineConfig({
             text: "Libraries",
             items: [{ text: "Message API", link: "src/luau/message" }],
           },
-          { text: "Configuration", link: "src/luau/config" },
         ],
       },
       {
