@@ -11,7 +11,7 @@ This API provides functions for sending and receiving messages between luau<->we
 import { message } from "luneweb";
 ```
 
-## listen
+## listen <Badge text="Function"/>
 
 listen to messages shared from luau to webview
 
@@ -21,7 +21,7 @@ message.listen(message => {
 });
 ```
 
-## createChannel
+## createChannel <Badge text="Function"/>
 
 create a channel for receiving messages and sending back results to luau
 

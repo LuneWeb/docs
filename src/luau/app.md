@@ -9,9 +9,7 @@ next: false
 
 `app` is injected into the globals environment by luneweb
 
-## Methods
-
-### exit
+## exit <Badge text="Method"/>
 
 Forcefully exit the application process with the provided exit code
 
@@ -21,7 +19,7 @@ function app.exit(self, exitCode: number): ()
 
 ---
 
-### run <Badge type="warning">Yields</Badge>
+## run <Badge text="Method"/> <Badge type="warning">Yields</Badge>
 
 Runs the main loop of the application which is necessary
 for making the `window` and `webview` component responsive
@@ -43,7 +41,7 @@ task.spawn(app.run, app)
 
 ---
 
-### onLoad
+## onLoad <Badge text="Method"/>
 
 Luau always runs before the webview loads even though the webview gets created first!
 so make sure to use the message api only after onLoad is called
@@ -64,7 +62,7 @@ when an API for listening to the ipc handler on luau gets introduced
 
 ---
 
-### shareMessage
+## shareMessage <Badge text="Method"/>
 
 share a message between all the listeners that are created on the webview
 
@@ -81,7 +79,7 @@ function app.shareMessage(self, message: any): ()
 
 ---
 
-### sendMessage <Badge type="warning">Yields</Badge>
+## sendMessage <Badge text="Method"/> <Badge type="warning">Yields</Badge>
 
 send a message to a channel on the webview and yield until it returns a value
 
