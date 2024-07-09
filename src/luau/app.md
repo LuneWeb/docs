@@ -1,15 +1,49 @@
 ---
-prev: false
-next:
-    text: "Others"
-    link: "src/luau/others"
+prev:
+    text: "Luau"
+    link: "src/luau"
+next: false
 ---
 
-# Message API
+# App
 
-This API provides functions for sending and receiving messages between luau<->webview
+`app` is injected into the globals environment by luneweb
 
-## onLoad
+## Methods
+
+### exit
+
+Forcefully exit the application process with the provided exit code
+
+```luau
+function app.exit(self, exitCode: number): ()
+```
+
+---
+
+### run <Badge type="warning">Yields</Badge>
+
+Runs the main loop of the application which is necessary
+for making the `window` and `webview` component responsive
+
+```luau
+function app.run(self): ()
+```
+
+::: tip
+This method runs a loop, so either call it within `task.spawn`
+or at the end of your program
+
+```luau
+local task = require("@lune/task")
+task.spawn(app.run, app)
+```
+
+:::
+
+---
+
+### onLoad
 
 Luau always runs before the webview loads even though the webview gets created first!
 so make sure to use the message api only after onLoad is called
@@ -28,7 +62,9 @@ This behaviour will change
 when an API for listening to the ipc handler on luau gets introduced
 :::
 
-## shareMessage
+---
+
+### shareMessage
 
 share a message between all the listeners that are created on the webview
 
@@ -36,14 +72,16 @@ share a message between all the listeners that are created on the webview
 function app.shareMessage(self, message: any): ()
 ```
 
-> ## Example
+> Example
 >
 > ```luau
 > app:shareMessage("yap...") -- webview receives: "yap..."
 > app:shareMessage({ "a", "b", "c" }) -- webview receives: [ "a", "b", "c" ]
 > ```
 
-## sendMessage <Badge type="warning">Yields</Badge>
+---
+
+### sendMessage <Badge type="warning">Yields</Badge>
 
 send a message to a channel on the webview and yield until it returns a value
 
@@ -51,7 +89,7 @@ send a message to a channel on the webview and yield until it returns a value
 function app.sendMessage(self, message: any): any
 ```
 
-> ## Example
+> Example
 >
 > ```luau
 > local value = app:sendMessage("Channel1", "Ashley")

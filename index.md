@@ -11,10 +11,10 @@ hero:
     alt: "luneweb"
   actions:
     - theme: brand
-      text: Get Started
+      text: API Documents
       link: src
     - theme: alt
-      text: Github
-      link: https://github.com/luneweb
+      text: Template
+      link: https://github.com/luneweb/luneweb-template
 ---
 
