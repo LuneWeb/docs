@@ -6,6 +6,9 @@ hero:
   name: "LuneWeb"
   text: "create applications with lune and tauri"
   tagline: "also known as lune + tauri"
+  image:
+    src: "/LuneWeb.png"
+    alt: "luneweb"
   actions:
     - theme: brand
       text: Get Started
