@@ -19,7 +19,10 @@ export default defineConfig({
         items: [
           {
             text: "Libraries",
-            items: [{ text: "Message API", link: "src/luau/message" }],
+            items: [
+              { text: "Message API", link: "src/luau/message" },
+              { text: "Others", link: "src/luau/others" },
+            ],
           },
         ],
       },
