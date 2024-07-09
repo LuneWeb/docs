@@ -17,7 +17,7 @@ export default defineConfig({
         text: "Luau",
         link: "src/luau",
         items: [
-          { text: "Setup", link: "src/luau/types" },
+          { text: "Setup", link: "src/luau/setup" },
           {
             text: "Globals",
             items: [{ text: "App", link: "src/luau/app" }],
