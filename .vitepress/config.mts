@@ -12,7 +12,7 @@ export default defineConfig({
 
     sidebar: [
       { text: "Install", link: "src" },
-      { text: "Configuration", link: "src/luau/config" },
+      { text: "Configuration", link: "src/config" },
       {
         text: "Luau",
         link: "src/luau",
