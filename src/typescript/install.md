@@ -16,19 +16,19 @@ inserted into the global `window` object
 ::: code-group
 
 ```shell [yarn]
-yarn add luneweb
+yarn add luneweb-api
 ```
 
 ```shell [npm]
-npm add luneweb
+npm add luneweb-api
 ```
 
 ```shell [pnpm]
-pnpm add luneweb
+pnpm add luneweb-api
 ```
 
 ```shell [bun]
-bun add luneweb
+bun add luneweb-api
 ```
 
 :::
