@@ -94,16 +94,8 @@ function app.sendMessage(self, message: any): any
 > print(`Channel1 returned: {value}`) -- Hello, Ashley!
 > ```
 
-::: warning
-this method will error when the webview returns `undefined`
-so it is recommeneded to use `sendMessage` in a `pcall`
+::: tip
 
-```luau
-local success, value = pcall(app.sendMessage, app, "Channel1", "Ashley")
-
-if success then
-    print(`Channel1 returned: {value}`) -- Hello, Ashley!
-end
-```
+when the returned value is `undefined`, it will automatically turn into `nil`
 
 :::
