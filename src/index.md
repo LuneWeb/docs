@@ -7,26 +7,32 @@ next:
 
 # Install
 
+## Recommended Toolchain Managers
+
 ::: code-group
 
-```shell [aftman]
-aftman add luneweb/luneweb
+```shell [rokit]
+rokit init
+rokit add luneweb/luneweb
 ```
 
-```shell [aftman (specific version)]
-aftman add luneweb/luneweb@<version>
-```
-
-```shell [cargo-latest]
+```shell [cargo-install]
 cargo install --git https://github.com/luneweb/luneweb
-```
-
-```shell [cargo (specific version)]
-cargo install --git https://github.com/luneweb/luneweb --tag <releases-tag>
 ```
 
 :::
 
+## Other Toolchain Managers
+
+You can also install luneweb through `aftman` or `foreman`
+
+foreman is supposed to be used for internal roblox projects
+so that tool is not recommended
+
+aftman installs the windows version of luneweb on linux
+so that tool isn't recommended either
+
 ## Install manually
 
-You can manually download LuneWeb from [Github](https://github.com/luneweb/luneweb/releases/latest)
+You can manually download LuneWeb from
+[Github](https://github.com/luneweb/luneweb/releases/latest)
