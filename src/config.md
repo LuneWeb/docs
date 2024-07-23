@@ -1,7 +1,7 @@
 # Config
 
-LuneWeb will try to read `luneweb.toml` from the path given
-to the `luneweb run` command
+LuneWeb will read `luneweb.toml` from the path given
+to the `luneweb run` command or the cwd
 
 ## Reference
 
