@@ -7,7 +7,7 @@ next:
 
 # Install
 
-## Recommended Toolchain Managers
+## Recommended methods
 
 ::: code-group
 
@@ -22,15 +22,10 @@ cargo install --git https://github.com/luneweb/luneweb
 
 :::
 
-## Other Toolchain Managers
+## Alternatives
 
-You can also install luneweb through `aftman` or `foreman`
-
-foreman is supposed to be used for internal roblox projects
-so that tool is not recommended
-
-aftman installs the windows version of luneweb on linux
-so that tool isn't recommended either
+- aftman
+- foreman
 
 ## Install manually
 
