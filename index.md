@@ -4,7 +4,7 @@ layout: home
 
 hero:
   name: "LuneWeb"
-  text: "create applications with lune and tauri"
+  text: "create cross-platform applications with lune and tauri"
   tagline: "also known as lune + tauri"
   image:
     src: "/LuneWeb.png"
