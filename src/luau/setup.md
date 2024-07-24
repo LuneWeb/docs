@@ -31,12 +31,17 @@ Installed Luau type definition files at: "/home/<username>/.luneweb/.type_defs-<
 
 Now to get autocomplete while using `luau-lsp` we'll put this into `.vscode/settings.json`
 
+::: warning
+luau-lsp started supporting (~)
+in the "luau-lsp.types.definitionFiles" setting since v1.32.1
+:::
+
 ```json
 {
   "luau-lsp.platform.type": "standard",
   "luau-lsp.require.mode": "relativeToFile",
   "luau-lsp.types.definitionFiles": [
-    "/home/<username>/.luneweb/.type_defs-<version>.d.luau"
+    "~/.luneweb/.type_defs-<version>.d.luau"
   ]
 }
 ```
