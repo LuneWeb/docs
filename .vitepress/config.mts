@@ -12,15 +12,21 @@ export default defineConfig({
 
     sidebar: [
       { text: "Install", link: "src" },
-      { text: "Configuration", link: "src/config" },
       {
         text: "Luau",
-        link: "src/luau",
         items: [
           { text: "Setup", link: "src/luau/setup" },
           {
             text: "Globals",
-            items: [{ text: "App", link: "src/luau/app" }],
+            items: [{ text: "WindowBuilder", link: "src/luau/window_builder" }],
+          },
+          {
+            text: "Classes",
+            items: [
+              { text: "Window", link: "src/luau/window" },
+              { text: "WebView", link: "src/luau/webview" },
+              { text: "Message", link: "src/luau/message" },
+            ],
           },
         ],
       },

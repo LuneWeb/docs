@@ -1,10 +1,6 @@
 ---
-prev:
-    text: "Luau"
-    link: "src/luau"
-next:
-    text: "App"
-    link: "src/luau/app"
+prev: false
+next: false
 ---
 
 # Types

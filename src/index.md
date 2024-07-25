@@ -1,8 +1,6 @@
 ---
 prev: false
-next:
-    text: "Luau"
-    link: "src/luau"
+next: false
 ---
 
 # Install

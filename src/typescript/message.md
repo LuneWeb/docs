@@ -13,24 +13,18 @@ import { message } from "luneweb";
 
 ## listen <Badge text="Function"/>
 
-listen to messages shared from luau to webview
+Opens a channel and creates a listener for it
 
 ```ts
-message.listen(message => {
-    console.log(`Message shared from Luau: ${JSON.Stringifiy(message)}`);
-});
+listen("ChannelName", (message) => {
+    console.log(`Message shared from Luau: ${message}`)
+})
 ```
 
-## createChannel <Badge text="Function"/>
+## postMessage <Badge text="Function"/>
 
-create a channel for receiving messages and sending back results to luau
+Provided value will be stringified into JSON before getting sent to the backend
 
 ```ts
-message.createChannel("Channel1", message => {
-    return `Hello, ${message}!`;
-});
+postMessage({ a: true, b: false, c: 1000 })
 ```
-
-::: warning
-using `createChannel` on the same channel name twice will remove the previous listener
-:::
