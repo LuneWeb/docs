@@ -17,10 +17,11 @@ function send(self, channel: string, message: any): ()
 
 ## listen <Badge text="Method"/>
 
-`listen` returns a function which can be used to listen to messages sent by `WebView`
+`listen` calls the provided callback function whenever
+it receives a message from `WebView`
 
 ```luau
-function listen(self): (callback: (message: any) -> ()) -> () 
+function listen(self, callback: (message: any) -> ()): () 
 ```
 
 ::: tip Example
@@ -29,10 +30,9 @@ function listen(self): (callback: (message: any) -> ()) -> ()
 local task = require("@lune/task")
 
 local window = WindowBuilder.new("Window", "about:blank")
-local listen = window.message:listen()
 
 -- listener runs in a loop, so it's recommend to use it inside its own thread
-task.spawn(listen, function(message)
+task.spawn(window.message.listen, window.message, function(message)
     if message == "loaded" then
         print("Page loaded")
     end
