@@ -12,5 +12,5 @@ next: false
 Create a `Window`
 
 ```luau
-function WindowBuilder.new(title: string, url: string): ()
+function WindowBuilder.new(title: string, url: string, dev_tools: boolean?): ()
 ```
