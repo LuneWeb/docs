@@ -9,8 +9,8 @@ next: false
 
 ## new <Badge text="Function"/>
 
-Create a `Window`
+Creates and returns a `Window`
 
 ```luau
-function WindowBuilder.new(title: string, url: string, dev_tools: boolean?): Window
+function WindowBuilder.new({ title: string?, url: string?, dev: boolean? }): Window
 ```
