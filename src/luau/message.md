@@ -27,12 +27,10 @@ function listen(self, callback: (message: any) -> ()): ()
 ::: tip Example
 
 ```luau
-local task = require("@lune/task")
-
 local window = WindowBuilder.new("Window", "about:blank")
 
 -- listener runs in a loop, so it's recommend to use it inside its own thread
-task.spawn(window.message.listen, window.message, function(message)
+window.message:listen(function(message)
     if message == "loaded" then
         print("Page loaded")
     end
