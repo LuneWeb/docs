@@ -20,8 +20,10 @@ function send(self, channel: string, message: any): ()
 `listen` calls the provided callback function whenever
 it receives a message from `WebView`
 
+* returns a function which disconnects the listener when it's called
+
 ```luau
-function listen(self, callback: (message: any) -> ()): () 
+function listen(self, callback: (message: any) -> ()): () -> ()
 ```
 
 ::: tip Example
@@ -29,12 +31,15 @@ function listen(self, callback: (message: any) -> ()): ()
 ```luau
 local window = WindowBuilder.new("Window", "about:blank")
 
--- listener runs in a loop, so it's recommend to use it inside its own thread
-window.message:listen(function(message)
+local disconnectListener = window.message:listen(function(message)
     if message == "loaded" then
         print("Page loaded")
     end
 end)
+
+-- ... later
+
+disconnectListener()
 ```
 
 :::
