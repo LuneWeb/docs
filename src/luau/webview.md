@@ -12,3 +12,5 @@ next: false
 ```luau
 function eval(self, src: string): ()
 ```
+
+* will error if syntax is wrong (macos and linux only)
