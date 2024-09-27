@@ -10,7 +10,9 @@ This page will help you go through the process of setting up luneweb
 ## Libraries
 
 The `setup` command will install libraries that are written in plain luau
-at your home directory under `.luneweb/`
+at project directory under `.luneweb/`.
+
+it's recommended to add this directory to .gitignore since its generated automatically
 
 ::: code-group
 
@@ -19,7 +21,7 @@ luneweb setup
 ```
 
 ```shell [output]
-Installed Luau type definition files at: "/home/<username>/.luneweb/.libraries-<version>"
+Installed Luau type definition files at: "path/to/cwd/.luneweb/.libraries-<version>"
 ```
 
 :::
@@ -33,7 +35,7 @@ as an `alias` like this:
 ```json [.luaurc]
 {
   "aliases": {
-    "luneweb": "~/.luneweb/.libraries-<version>/"
+    "luneweb": "path/to/cwd/.luneweb/.libraries-<version>/"
   }
 }
 ```
@@ -69,7 +71,7 @@ Now to get autocomplete while using `luau-lsp` we'll put this into `.vscode/sett
     "~/.luneweb/.type_defs-<version>.d.luau"
   ],
   "luau-lsp.require.directoryAliases": {
-    "@luneweb/": "~/.luneweb/.libraries-<version>/"
+    "@luneweb/": "path/to/cwd/.luneweb/.libraries-<version>/"
   }
 }
 ```
