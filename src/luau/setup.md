@@ -35,7 +35,7 @@ as an `alias` like this:
 ```json [.luaurc]
 {
   "aliases": {
-    "luneweb": "path/to/cwd/.luneweb/.libraries-<version>/"
+    "luneweb": ".luneweb/.libraries-<version>/"
   }
 }
 ```
@@ -71,7 +71,7 @@ Now to get autocomplete while using `luau-lsp` we'll put this into `.vscode/sett
     "~/.luneweb/.type_defs-<version>.d.luau"
   ],
   "luau-lsp.require.directoryAliases": {
-    "@luneweb/": "path/to/cwd/.luneweb/.libraries-<version>/"
+    "@luneweb/": ".luneweb/.libraries-<version>/"
   }
 }
 ```
