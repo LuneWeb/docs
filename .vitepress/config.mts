@@ -18,7 +18,10 @@ export default defineConfig({
           { text: "Setup", link: "src/luau/setup" },
           {
             text: "Globals",
-            items: [{ text: "WindowBuilder", link: "src/luau/window_builder" }],
+            items: [
+              { text: "WindowBuilder", link: "src/luau/window_builder" },
+              { text: "AudioBuilder", link: "src/luau/audio_builder" },
+            ],
           },
           {
             text: "Classes",
@@ -26,6 +29,7 @@ export default defineConfig({
               { text: "Window", link: "src/luau/window" },
               { text: "WebView", link: "src/luau/webview" },
               { text: "Message", link: "src/luau/message" },
+              { text: "AudioSource", link: "src/luau/audio_source" },
             ],
           },
         ],
