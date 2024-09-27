@@ -29,7 +29,7 @@ function listen(self, callback: (message: any) -> ()): () -> ()
 ::: tip Example
 
 ```luau
-local window = WindowBuilder.new("Window", "about:blank")
+local window = WindowBuilder.new()
 
 local disconnectListener = window.message:listen(function(message)
     if message == "loaded" then
